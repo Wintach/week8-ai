@@ -29,8 +29,7 @@ public class FieldOfView : MonoBehaviour
         targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         foreach (Collider target in targetsInViewRadius)
         {
-            if(target.tag == "hero")
-            {
+            
                 Vector3 dirToTarget = (target.transform.position - transform.position).normalized;
                 if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
                 {
@@ -42,7 +41,7 @@ public class FieldOfView : MonoBehaviour
                         break;
                     }
                 }
-            }
+            
         }
     }
 
